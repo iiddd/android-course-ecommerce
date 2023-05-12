@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.ui
+package com.iiddd.ecommerceapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.renarosantos.ecommerceapp.databinding.FragmentProductDetailsBinding
+import com.iiddd.ecommerceapp.databinding.FragmentProductDetailsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProductDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentProductDetailsBinding
@@ -52,6 +54,7 @@ class ProductDetailsFragment : Fragment() {
                 showProductViews()
                 setProduct(viewState)
             }
+
             is ProductDetailsViewState.Loading -> {
                 hideProductViews()
                 with(binding) {
@@ -60,6 +63,7 @@ class ProductDetailsFragment : Fragment() {
                     loadingView.isVisible = true
                 }
             }
+
             is ProductDetailsViewState.Error -> {
                 hideProductViews()
                 with(binding) {

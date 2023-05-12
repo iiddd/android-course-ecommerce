@@ -1,12 +1,12 @@
-package com.renarosantos.ecommerceapp.ui
+package com.iiddd.ecommerceapp.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.renarosantos.ecommerceapp.R
-import com.renarosantos.ecommerceapp.databinding.ProductCardBinding
+import com.iiddd.ecommerceapp.R
+import com.iiddd.ecommerceapp.databinding.ProductCardBinding
 import kotlin.properties.Delegates
 
 class ProductCardListAdapter(

@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Playstation 5"
+            tools:text="Playstation 5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/productImage"
             app:layout_constraintTop_toTopOf="@id/productImage" />
@@ -40,7 +40,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="With the new Playstation 5 you can play the most awesome games non-stop! Make sure to pre-order!"
+            tools:text="With the new Playstation 5 you can play the most awesome games non-stop! Make sure to pre-order!"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/viewProductName"
             app:layout_constraintTop_toBottomOf="@id/viewProductName" />
@@ -53,7 +53,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="sans-serif-medium"
-            android:text="$599,99"
+            tools:text="$599,99"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/buyButton"

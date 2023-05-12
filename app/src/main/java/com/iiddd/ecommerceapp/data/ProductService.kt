@@ -1,6 +1,6 @@
-package com.renarosantos.ecommerceapp.data
+package com.iiddd.ecommerceapp.data
 
-import com.renarosantos.ecommerceapp.domain.ProductEntity
+import com.iiddd.ecommerceapp.domain.ProductEntity
 import retrofit2.http.GET
 
 interface ProductService {

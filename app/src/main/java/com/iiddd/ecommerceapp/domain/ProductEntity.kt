@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.domain
+package com.iiddd.ecommerceapp.domain
 
 data class ProductEntity(
     val id: Int,

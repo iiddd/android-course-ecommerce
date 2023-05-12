@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp.ui
+package com.iiddd.ecommerceapp.ui
 
 data class ProductCardViewState(
     val id: Int,

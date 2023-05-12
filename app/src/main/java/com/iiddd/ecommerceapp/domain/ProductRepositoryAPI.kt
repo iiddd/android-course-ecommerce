@@ -1,18 +1,18 @@
-package com.renarosantos.ecommerceapp.domain
+package com.iiddd.ecommerceapp.domain
 
-import com.renarosantos.ecommerceapp.data.ApiClient
-import com.renarosantos.ecommerceapp.data.ProductRepository
-import com.renarosantos.ecommerceapp.ui.ProductCardViewState
+import com.iiddd.ecommerceapp.data.ProductRepository
+import com.iiddd.ecommerceapp.data.ProductService
+import com.iiddd.ecommerceapp.ui.ProductCardViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class ProductRepositoryAPI : ProductRepository {
-
-    private val client = ApiClient().getClient()
+class ProductRepositoryAPI
+@Inject constructor(private val service: ProductService) : ProductRepository {
 
     override suspend fun getProductList(): List<ProductCardViewState> {
         return withContext(Dispatchers.IO) {
-            client.getProductList().map {
+            service.getProductList().map {
                 ProductCardViewState(
                     it.id,
                     it.title,

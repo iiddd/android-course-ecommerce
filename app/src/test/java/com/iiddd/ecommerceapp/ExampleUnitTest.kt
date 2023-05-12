@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp
+package com.iiddd.ecommerceapp
 
 import org.junit.Test
 

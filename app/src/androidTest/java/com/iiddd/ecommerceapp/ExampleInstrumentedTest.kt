@@ -1,4 +1,4 @@
-package com.renarosantos.ecommerceapp
+package com.iiddd.ecommerceapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.renarosantos.ecommerceapp", appContext.packageName)
+        assertEquals("com.iiddd.ecommerceapp", appContext.packageName)
     }
 }
