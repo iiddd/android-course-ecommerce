@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.ui
+package com.iiddd.ecommerceapp.ui.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.iiddd.ecommerceapp.R
 import com.iiddd.ecommerceapp.databinding.ProductCardBinding
+import com.iiddd.ecommerceapp.domain.entities.Product
 import kotlin.properties.Delegates
 
 class ProductCardListAdapter(
@@ -14,7 +15,7 @@ class ProductCardListAdapter(
 ) : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
 
 
-    private var data: List<ProductCardViewState> = emptyList()
+    private var data: List<Product> = emptyList()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -34,7 +35,7 @@ class ProductCardListAdapter(
         return data.size
     }
 
-    fun setData(productList: List<ProductCardViewState>) {
+    fun setData(productList: List<Product>) {
         this.data = productList
     }
 
@@ -45,15 +46,15 @@ class ProductCardListAdapter(
 
         private var productId by Delegates.notNull<Int>()
 
-        fun bind(productCardViewState: ProductCardViewState) {
+        fun bind(product: Product) {
             val binding = ProductCardBinding.bind(itemView)
-            productId = productCardViewState.id
+            productId = product.id
             binding.apply {
-                viewProductName.text = productCardViewState.title
-                viewProductDescription.text = productCardViewState.description
-                productPrice.text = productCardViewState.price
+                viewProductName.text = product.title
+                viewProductDescription.text = product.description
+                productPrice.text = product.price
                 Glide.with(productImage)
-                    .load(productCardViewState.imageUrl)
+                    .load(product.imageUrl)
                     .into(productImage)
             }
         }

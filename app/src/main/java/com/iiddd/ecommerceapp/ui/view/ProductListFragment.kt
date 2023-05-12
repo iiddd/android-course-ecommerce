@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.ui
+package com.iiddd.ecommerceapp.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iiddd.ecommerceapp.databinding.FragmentProductsBinding
+import com.iiddd.ecommerceapp.ui.ProductListFragmentDirections
+import com.iiddd.ecommerceapp.ui.ProductListViewModel
+import com.iiddd.ecommerceapp.ui.viewstate.ProductListViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

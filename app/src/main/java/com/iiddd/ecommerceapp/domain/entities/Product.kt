@@ -1,6 +1,6 @@
-package com.iiddd.ecommerceapp.ui
+package com.iiddd.ecommerceapp.domain.entities
 
-data class ProductCardViewState(
+data class Product(
     val id: Int,
     val title: String,
     val description: String,

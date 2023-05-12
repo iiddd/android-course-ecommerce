@@ -1,6 +1,6 @@
-package com.iiddd.ecommerceapp.data
+package com.iiddd.ecommerceapp.data.repository.api
 
-import com.iiddd.ecommerceapp.domain.ProductEntity
+import com.iiddd.ecommerceapp.data.entities.ProductEntity
 import retrofit2.http.GET
 
 interface ProductService {

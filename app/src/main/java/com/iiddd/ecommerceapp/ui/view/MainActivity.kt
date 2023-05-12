@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.ui
+package com.iiddd.ecommerceapp.ui.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

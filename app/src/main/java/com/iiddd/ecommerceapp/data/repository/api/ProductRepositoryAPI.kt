@@ -1,8 +1,7 @@
-package com.iiddd.ecommerceapp.domain
+package com.iiddd.ecommerceapp.data.repository.api
 
-import com.iiddd.ecommerceapp.data.ProductRepository
-import com.iiddd.ecommerceapp.data.ProductService
-import com.iiddd.ecommerceapp.ui.ProductCardViewState
+import com.iiddd.ecommerceapp.data.repository.ProductRepository
+import com.iiddd.ecommerceapp.domain.entities.Product
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -10,10 +9,10 @@ import javax.inject.Inject
 class ProductRepositoryAPI
 @Inject constructor(private val service: ProductService) : ProductRepository {
 
-    override suspend fun getProductList(): List<ProductCardViewState> {
+    override suspend fun getProductList(): List<Product> {
         return withContext(Dispatchers.IO) {
             service.getProductList().map {
-                ProductCardViewState(
+                Product(
                     it.id,
                     it.title,
                     it.description,
@@ -24,7 +23,7 @@ class ProductRepositoryAPI
         }
     }
 
-    suspend fun getProduct(id: Int): ProductCardViewState {
+    suspend fun getProduct(id: Int): Product {
         return getProductList().first { i -> i.id == id }
     }
 }

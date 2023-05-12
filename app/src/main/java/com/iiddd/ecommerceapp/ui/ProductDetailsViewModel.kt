@@ -4,7 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.iiddd.ecommerceapp.domain.ProductRepositoryAPI
+import com.iiddd.ecommerceapp.data.repository.api.ProductRepositoryAPI
+import com.iiddd.ecommerceapp.ui.viewstate.ProductDetailsViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
