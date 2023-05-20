@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.ui.view
+package com.iiddd.ecommerceapp.productdetails.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.iiddd.ecommerceapp.databinding.FragmentProductDetailsBinding
-import com.iiddd.ecommerceapp.ui.ProductDetailsFragmentArgs
-import com.iiddd.ecommerceapp.ui.ProductDetailsViewModel
-import com.iiddd.ecommerceapp.ui.viewstate.ProductDetailsViewState
+import com.iiddd.ecommerceapp.productdetails.ui.ProductDetailsViewModel
+import com.iiddd.ecommerceapp.productdetails.ui.viewstate.ProductDetailsViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

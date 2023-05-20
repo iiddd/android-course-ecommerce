@@ -1,11 +1,11 @@
-package com.iiddd.ecommerceapp.ui
+package com.iiddd.ecommerceapp.shared.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.iiddd.ecommerceapp.data.repository.ProductRepository
-import com.iiddd.ecommerceapp.ui.viewstate.ProductListViewState
+import com.iiddd.ecommerceapp.shared.data.repository.ProductRepository
+import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductListViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

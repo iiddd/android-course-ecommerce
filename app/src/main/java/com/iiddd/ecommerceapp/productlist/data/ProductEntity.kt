@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.data.entities
+package com.iiddd.ecommerceapp.productlist.data
 
 data class ProductEntity(
     val id: Int,

@@ -1,9 +1,9 @@
 package com.iiddd.ecommerceapp.di
 
-import com.iiddd.ecommerceapp.data.repository.api.ApiClient
-import com.iiddd.ecommerceapp.data.repository.ProductRepository
-import com.iiddd.ecommerceapp.data.repository.api.ProductService
-import com.iiddd.ecommerceapp.data.repository.api.ProductRepositoryAPI
+import com.iiddd.ecommerceapp.shared.data.repository.ApiClient
+import com.iiddd.ecommerceapp.shared.data.repository.ProductRepository
+import com.iiddd.ecommerceapp.shared.data.repository.ProductService
+import com.iiddd.ecommerceapp.shared.data.repository.ProductRepositoryAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

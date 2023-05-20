@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.ui.view
+package com.iiddd.ecommerceapp.productlist.ui.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.iiddd.ecommerceapp.R
 import com.iiddd.ecommerceapp.databinding.ProductCardBinding
-import com.iiddd.ecommerceapp.domain.entities.Product
+import com.iiddd.ecommerceapp.productlist.domain.Product
 import kotlin.properties.Delegates
 
 class ProductCardListAdapter(
@@ -53,6 +53,11 @@ class ProductCardListAdapter(
                 viewProductName.text = product.title
                 viewProductDescription.text = product.description
                 productPrice.text = product.price
+//                viewWishlistButton.setImageDrawable(
+//                    if (prod) {
+//
+//                    }
+//                )
                 Glide.with(productImage)
                     .load(product.imageUrl)
                     .into(productImage)

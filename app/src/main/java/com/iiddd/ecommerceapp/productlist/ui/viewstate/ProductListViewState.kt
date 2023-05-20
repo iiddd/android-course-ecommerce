@@ -1,6 +1,6 @@
-package com.iiddd.ecommerceapp.ui.viewstate
+package com.iiddd.ecommerceapp.productlist.ui.viewstate
 
-import com.iiddd.ecommerceapp.domain.entities.Product
+import com.iiddd.ecommerceapp.productlist.domain.Product
 
 sealed class ProductListViewState {
     object Loading : ProductListViewState()

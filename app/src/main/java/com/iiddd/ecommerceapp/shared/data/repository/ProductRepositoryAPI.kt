@@ -1,7 +1,6 @@
-package com.iiddd.ecommerceapp.data.repository.api
+package com.iiddd.ecommerceapp.shared.data.repository
 
-import com.iiddd.ecommerceapp.data.repository.ProductRepository
-import com.iiddd.ecommerceapp.domain.entities.Product
+import com.iiddd.ecommerceapp.productlist.domain.Product
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

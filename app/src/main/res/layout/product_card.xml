@@ -60,6 +60,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewProductDescription" />
 
+        <ImageButton
+            android:id="@+id/view_wishlist_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corners"
+            android:src="@drawable/ic_baseline_favorite"
+            android:layout_marginEnd="6dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/buyButton"
+            app:layout_constraintEnd_toStartOf="@+id/buyButton"
+            app:layout_constraintTop_toTopOf="@+id/buyButton" />
+
         <Button
             android:id="@+id/buyButton"
             android:layout_width="wrap_content"
