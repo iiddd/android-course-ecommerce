@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.shared.data.repository
+package com.iiddd.ecommerceapp.shared.data.repository.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

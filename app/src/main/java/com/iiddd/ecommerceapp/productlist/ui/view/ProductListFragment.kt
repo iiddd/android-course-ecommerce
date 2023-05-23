@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iiddd.ecommerceapp.databinding.FragmentProductsBinding
+import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductCardViewState
 import com.iiddd.ecommerceapp.shared.ui.ProductListViewModel
 import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductListViewState
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,7 +23,9 @@ class ProductListFragment : Fragment() {
     private val viewModel: ProductListViewModel by viewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         binding = FragmentProductsBinding.inflate(layoutInflater)
         return binding.root
@@ -30,10 +33,10 @@ class ProductListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bindRecyclerView()
+        onViewCreated()
     }
 
-    private fun bindRecyclerView() {
+    private fun onViewCreated() {
         adapter = ProductCardListAdapter(::navigateToProduct)
         binding.viewProductList.layoutManager =
             LinearLayoutManager(requireContext())
@@ -50,8 +53,8 @@ class ProductListFragment : Fragment() {
                 with(binding) {
                     viewProductList.isVisible = true
                     errorView.isVisible = false
-                    loadingView.isVisible = false
                     errorTextView.isVisible = false
+                    loadingView.isVisible = false
 
                 }
                 adapter.setData(viewState.productList)
@@ -78,8 +81,8 @@ class ProductListFragment : Fragment() {
         }
     }
 
-    private fun navigateToProduct(itemId: Int) {
-        val direction = ProductListFragmentDirections.goToProduct(itemId)
+    private fun navigateToProduct(viewState: ProductCardViewState) {
+        val direction = ProductListFragmentDirections.goToProduct()
         findNavController().navigate(direction)
     }
 }

@@ -1,4 +1,4 @@
-package com.iiddd.ecommerceapp.shared.ui
+package com.iiddd.ecommerceapp.productlist.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,21 +7,20 @@ import androidx.lifecycle.viewModelScope
 import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductCardViewState
 import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductListViewState
 import com.iiddd.ecommerceapp.shared.domain.ProductRepository
-import com.iiddd.ecommerceapp.wishlist.data.repository.WishlistRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductListViewModel
-@Inject constructor(
+class ProductListViewModel @Inject constructor(
     private val repository: ProductRepository,
-    private val wishlistRepository: WishlistRepository
-    ) : ViewModel() {
+//    private val wishlistRepository: WishlistRepository
+) : ViewModel() {
 
     private val _viewState = MutableLiveData<ProductListViewState>()
     val viewState: LiveData<ProductListViewState>
         get() = _viewState
+
 
     fun loadProductList() {
         viewModelScope.launch {
@@ -36,7 +35,7 @@ class ProductListViewModel
                             it.description,
                             "US $ ${it.price}",
                             it.imageUrl,
-                            wishlistRepository.isFavorite(it.id)
+                            isFavorite = false
                         )
                     }
                 ))

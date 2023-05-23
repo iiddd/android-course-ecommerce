@@ -19,8 +19,5 @@
         android:name="com.iiddd.ecommerceapp.productdetails.ui.view.ProductDetailsFragment"
         android:label="fragment_product_details"
         tools:layout="@layout/fragment_product_details">
-        <argument
-            android:name="productId"
-            app:argType="integer" />
     </fragment>
 </navigation>

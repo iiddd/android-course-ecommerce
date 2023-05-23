@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.iiddd.ecommerceapp.databinding.FragmentProductDetailsBinding
 import com.iiddd.ecommerceapp.productdetails.ui.ProductDetailsViewModel
@@ -18,14 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProductDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentProductDetailsBinding
-
     private val viewModel: ProductDetailsViewModel by viewModels()
-    private val args: ProductDetailsFragmentArgs by navArgs()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.setProductId(args.productId)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,13 +30,13 @@ class ProductDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.loadProduct("someProductId")
         viewModel.viewState.observe(viewLifecycleOwner) {
-            processViewState(it)
+            updateUi(it)
         }
-        viewModel.loadProduct()
     }
 
-    private fun processViewState(viewState: ProductDetailsViewState) {
+    private fun updateUi(viewState: ProductDetailsViewState) {
         when (viewState) {
             is ProductDetailsViewState.Content -> {
                 with(binding) {
