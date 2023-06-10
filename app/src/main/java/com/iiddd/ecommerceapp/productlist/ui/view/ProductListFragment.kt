@@ -10,8 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iiddd.ecommerceapp.databinding.FragmentProductsBinding
+import com.iiddd.ecommerceapp.productlist.ui.ProductListViewModel
 import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductCardViewState
-import com.iiddd.ecommerceapp.shared.ui.ProductListViewModel
 import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductListViewState
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,7 +37,7 @@ class ProductListFragment : Fragment() {
     }
 
     private fun onViewCreated() {
-        adapter = ProductCardListAdapter(::navigateToProduct)
+        adapter = ProductCardListAdapter(::navigateToProduct, ::onFavoriteIconClicked)
         binding.viewProductList.layoutManager =
             LinearLayoutManager(requireContext())
         binding.viewProductList.adapter = adapter
@@ -84,5 +84,9 @@ class ProductListFragment : Fragment() {
     private fun navigateToProduct(viewState: ProductCardViewState) {
         val direction = ProductListFragmentDirections.goToProduct()
         findNavController().navigate(direction)
+    }
+
+    private fun onFavoriteIconClicked(viewState: ProductCardViewState) {
+        viewModel.favoriteIconClicked(viewState.id)
     }
 }

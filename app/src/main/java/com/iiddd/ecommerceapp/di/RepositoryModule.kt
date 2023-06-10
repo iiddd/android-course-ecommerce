@@ -6,6 +6,7 @@ import com.iiddd.ecommerceapp.shared.data.repository.api.ApiClient
 import com.iiddd.ecommerceapp.shared.data.repository.api.ProductRepositoryAPI
 import com.iiddd.ecommerceapp.shared.data.repository.api.ProductService
 import com.iiddd.ecommerceapp.shared.domain.ProductRepository
+import com.iiddd.ecommerceapp.wishlist.data.repository.WishListSharedPreferencesRepository
 import com.iiddd.ecommerceapp.wishlist.data.repository.WishlistDatabaseRepository
 import com.iiddd.ecommerceapp.wishlist.data.repository.WishlistRepository
 import com.iiddd.ecommerceapp.wishlist.data.repository.database.AppDatabase
@@ -46,7 +47,16 @@ class RepositoryModule {
     }
 
     @Provides
-    fun providesWishlistDAO(@ApplicationContext context: Context): WishlistDAO {
+    fun providesWishlistSharedPreferencesRepository(
+        @ApplicationContext context: Context
+    ): WishListSharedPreferencesRepository {
+        return WishListSharedPreferencesRepository(context)
+    }
+
+    @Provides
+    fun providesWishlistDAO(
+        @ApplicationContext context: Context
+    ): WishlistDAO {
         val db = Room.databaseBuilder(context, AppDatabase::class.java, "ecommerce-db").build()
         return db.wishListDao()
     }

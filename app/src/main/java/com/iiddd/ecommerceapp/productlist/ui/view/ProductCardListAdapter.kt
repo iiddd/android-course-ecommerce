@@ -11,7 +11,8 @@ import com.iiddd.ecommerceapp.databinding.ProductCardBinding
 import com.iiddd.ecommerceapp.productlist.ui.viewstate.ProductCardViewState
 
 class ProductCardListAdapter(
-    private val onProductClickListener: (ProductCardViewState) -> Unit
+    private val onProductClickListener: (ProductCardViewState) -> Unit,
+    private val onFavoriteIconClicked: (ProductCardViewState) -> Unit
 ) : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
 
 
@@ -36,6 +37,7 @@ class ProductCardListAdapter(
 
     fun setData(productList: List<ProductCardViewState>) {
         this.data = productList
+        notifyDataSetChanged()
     }
 
     inner class ViewHolder(
@@ -51,6 +53,9 @@ class ProductCardListAdapter(
                 viewProductName.text = productCardViewState.title
                 viewProductDescription.text = productCardViewState.description
                 productPrice.text = productCardViewState.price
+                viewWishlistButton.setOnClickListener {
+                    onFavoriteIconClicked.invoke(productCardViewState)
+                }
                 viewWishlistButton.setImageDrawable(
                     if (productCardViewState.isFavorite) {
                         ResourcesCompat.getDrawable(
